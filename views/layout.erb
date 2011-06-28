@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <title><%= "#{@title} | #{SITE_TITLE}" %></title>
+  <link href="/style.css" rel="stylesheet">
+  <link href="/rss.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body>
+  <header>
+    <hgroup>
+      <h1><a href="/"><Recall><%= SITE_TITLE %></a></h1>
+      <h2><%= SITE_DESCRIPTION %></h2>
+    </hgroup>
+  </header>
+	
+  <div id="main">
+	<% if flash[:notice] %>
+		<p class="notice"><%= flash[:notice] %></p>
+	<% end %>
+	<% if flash[:error] %>
+		<p class="error"><%= flash[:error] %></p>
+	<% end %>
+    <%= yield %>
+  </div>
+
+  <footer>
+  
+  </footer>
+</body>
+</html>
