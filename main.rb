@@ -10,7 +10,8 @@ require 'sinatra/redirect_with_flash'
 require 'sinatra/reloader' if development?
 
 require 'sinatra/authorization'
-require './models/notes'
+models = File.join(File.dirname(__FILE__), 'models/notes.rb')
+require models
 
 use Rack::Flash, :sweep => true
 
